@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery.min.js"></script>
+    <style>
+        .rating > span {
+            font-size: 25px;
+        }
+        .rating > span:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td align="right">评星：</td>
+                <td class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></td>
+            </tr>
+            <tr>
+                <td align="right">姓名：</td>
+                <td><input type="text" id="txt_name" /></td>
+            </tr>
+            <tr>
+                <td align="right">性别：</td>
+                <td><input type="text" id="txt_sex" /></td>
+            </tr>
+            <tr>
+                <td align="right">年龄：</td>
+                <td><input type="text" id="txt_age" /></td>
+            </tr>
+            <tr>
+                <td align="right">邮箱：</td>
+                <td><input type="text" id="txt_mail" /></td>
+            </tr>
+            <tr>
+                <td align="right">现住址：</td>
+                <td><input type="text" id="txt_address" /></td>
+            </tr>
+            <tr>
+                <td align="right">联系电话：</td>
+                <td><input type="text" id="txt_phoneNum" /></td>
+            </tr>
+            <tr>
+                <td align="right">紧急联系人：</td>
+                <td><input type="text" id="txt_urgentPeopel" /></td>
+            </tr>
+            <tr>
+                <td align="right">紧急联系人电话：</td>
+                <td><input type="text" id="txt_urgentPhoneNum" /></td>
+            </tr>
+        </table>
+    </div>
+    <div id="editorTobar" style="width:750px;border:1px solid black;">
+    </div>
+    <div id="editorText" style="height:200px;width:750px;border-right:1px solid black;border-left:1px solid black;border-bottom:1px solid black;"></div>
+    <input type="button" id="btn_submit" value="提交" onclick="submit()" />
+    <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+    <script src="wangEditor-3.1.1/release/wangEditor.min.js"></script>
+    <script type="text/javascript">
+        //编辑器创建之前，可使用editor.customConfig.menus定义显示哪些菜单和菜单的顺序。注意：v3 版本的菜单不支持换行折叠了（因为换行之后菜单栏是在太难看），如果菜单栏宽度不够，建议精简菜单项。
+        //菜单数组
+        /*[
+        'head',  // 标题
+        'bold',  // 粗体
+        'fontSize',  // 字号
+        'fontName',  // 字体
+        'italic',  // 斜体
+        'underline',  // 下划线
+        'strikeThrough',  // 删除线
+        'foreColor',  // 文字颜色
+        'backColor',  // 背景颜色
+        'link',  // 插入链接
+        'list',  // 列表
+        'justify',  // 对齐方式
+        'quote',  // 引用
+        'emoticon',  // 表情
+        'image',  // 插入图片
+        'table',  // 表格
+        'video',  // 插入视频
+        'code',  // 插入代码
+        'undo',  // 撤销
+        'redo'  // 重复
+        ]*/
+        var E = window.wangEditor
+        var editor = new E('#editorTobar', '#editorText')
+        //开启本地图片上传
+        editor.customConfig.uploadImgShowBase64 = true
+        // 自定义菜单配置
+        editor.customConfig.menus = [
+            'head',
+            'bold',
+            'italic',
+            'underline',
+            'emoticon'
+        ]
+        editor.create()
+        function submit() {
+            var name = document.getElementById("txt_name").value;
+            var age = document.getElementById("txt_age").value;
+            var sex = document.getElementById("txt_sex").value;
+            var mail = document.getElementById("txt_mail").value;
+            var address = document.getElementById("txt_address").value;
+            var phoneNum = document.getElementById("txt_phoneNum").value;
+            var urgentPeopel = document.getElementById("txt_urgentPeopel").value;
+            var urgentPhoneNum = document.getElementById("txt_urgentPhoneNum").value;
+            var editerText = editor.txt.html();//editor.txt.text();
+            var str = "name=" + name + "&age=" + age + "&sex=" + sex + "&mail=" + mail + "&address=" + address + "&phoneNum=" + phoneNum + "&urgentPeopel=" + urgentPeopel + "&urgentPhoneNum=" + urgentPhoneNum + "&editerText=" + editerText;
+            alert(str);
+            $.ajax({
+                type: "POST",
+                url: "ashx/Handler1.ashx",
+                data: str,
+                async: false,
+                success: function (results) {
+                    document.write(results);
+                },
+                error: function (msg) {
+
+                }
+            });
+        }
+    </script>
+</body>
+</html>

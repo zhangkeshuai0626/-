@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebApplication3\WebApplication3.csproj", "{C88DAFA8-F978-472F-B8F3-2F6949828BA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalDBTest", "LocalDBTest\LocalDBTest.csproj", "{8846E6F1-1F5F-47A3-A0EF-249408B51A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimilarPhoto", "SimilarPhoto\SimilarPhoto.csproj", "{DBBF0414-A3BF-4074-BEA7-85B9EEE2B557}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C88DAFA8-F978-472F-B8F3-2F6949828BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C88DAFA8-F978-472F-B8F3-2F6949828BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C88DAFA8-F978-472F-B8F3-2F6949828BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C88DAFA8-F978-472F-B8F3-2F6949828BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8846E6F1-1F5F-47A3-A0EF-249408B51A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8846E6F1-1F5F-47A3-A0EF-249408B51A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8846E6F1-1F5F-47A3-A0EF-249408B51A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8846E6F1-1F5F-47A3-A0EF-249408B51A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBBF0414-A3BF-4074-BEA7-85B9EEE2B557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBBF0414-A3BF-4074-BEA7-85B9EEE2B557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBBF0414-A3BF-4074-BEA7-85B9EEE2B557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBBF0414-A3BF-4074-BEA7-85B9EEE2B557}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
